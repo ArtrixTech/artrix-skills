@@ -64,15 +64,31 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## 3. Architecture
 
+A system has three layers of structure that must stay aligned:
+
+| Layer | What it answers |
+|---|---|
+| **Logical** | What are the conceptual components? What does each one own? |
+| **Implementation** | How are those components realized in code — modules, classes, interfaces, data flow? |
+| **File organization** | How are files and directories laid out on disk? |
+
+Misalignment between any two layers is a structural defect: a logical component scattered across unrelated directories, a single file serving multiple logical owners, a directory hierarchy that implies relationships the code contradicts.
+
+### Three-Layer Alignment
+
+- Each logical component maps to a clear implementation boundary (module, class, service — whatever the stack uses).
+- Each implementation boundary maps to a predictable file location.
+- If you change one layer, verify the other two still match.
+
+Smell test: given a logical component name, can someone unfamiliar with the codebase find its implementation and files without searching? If not, the mapping is broken.
+
 ### One-Sentence Rule
 
-Every directory and every module must be describable in a single sentence: what it owns, what it does not. If you cannot write that sentence, the boundary is wrong — split, merge, or rename until you can.
-
-This rule doubles as the format for `Architecture.md` entries.
+Every logical component, every module, and every directory must be describable in a single sentence: what it owns, what it does not. If you cannot write that sentence, the boundary is wrong — split, merge, or rename until you can.
 
 ### Place Before Create
 
-Before adding a new file or directory, answer: "Which existing boundary does this belong to?" If no boundary fits:
+Before adding a new file or directory, answer: "Which logical component does this belong to, and where does that component live?" If no boundary fits:
 1. The structure may need adjustment, or
 2. The new thing is poorly defined.
 
@@ -80,7 +96,7 @@ Never create a file with the intent to "figure out where it goes later."
 
 ### Dependency Direction
 
-Dependencies between layers/modules flow in one direction. If A depends on B and B depends on A, the boundary between them is broken — resolve it before moving forward.
+Dependencies between components flow in one direction. If A depends on B and B depends on A, the boundary between them is broken — resolve it before moving forward.
 
 ### Architecture.md
 
@@ -90,16 +106,16 @@ Format:
 ```markdown
 # Architecture
 
-## Structure
-<directory tree with one-sentence description per node>
+## Components
+<list of logical components, each with a one-sentence description and its file-level location>
 
 ## Key Relationships (optional)
-<brief prose on core dependency/containment relationships, only when the tree alone is ambiguous>
+<brief prose on dependency/containment/data-flow between components, only when the component list alone is ambiguous>
 ```
 
 Rules:
-- Update when structure changes (directory added/removed/moved, module split/merged). Not for implementation-detail changes.
-- Granularity: directory-level. Individual files only when a single file is a standalone module.
+- Update when structure changes (component added/removed/split/merged, directory moved). Not for implementation-detail changes.
+- Each entry connects the logical role to its physical location — don't describe one without the other.
 - Keep it factual (what *is*), not aspirational (what *should be*).
 
 ## 4. Communication

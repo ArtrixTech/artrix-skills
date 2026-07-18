@@ -1,12 +1,10 @@
 # Architecture
 
-## Structure
+## Components
 
-```
-artrix-skills/
-├── AGENTS.md              # Canonical agent guidelines — the master copy iterated here and copied to other projects
-├── Architecture.md        # This file — structural map of the repo
-└── docs/
-    ├── devlog.md           # Reverse-chronological development log, one block per commit
-    └── precipitation/      # Durable knowledge artifacts: lessons, pitfalls, reusable workflows
-```
+| Component | Role | Location |
+|---|---|---|
+| Agent Guidelines | Canonical coding/workflow rules — the master copy iterated here and portable to other projects | `AGENTS.md` |
+| Structural Map | Living description of this repo's architecture | `Architecture.md` |
+| Development Log | Reverse-chronological commit-level changelog | `docs/devlog.md` |
+| Precipitation Docs | Durable knowledge artifacts: lessons, pitfalls, reusable workflows | `docs/precipitation/` |
