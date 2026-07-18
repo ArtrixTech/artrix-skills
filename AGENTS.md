@@ -62,20 +62,60 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-## 3. Communication
+## 3. Architecture
+
+### One-Sentence Rule
+
+Every directory and every module must be describable in a single sentence: what it owns, what it does not. If you cannot write that sentence, the boundary is wrong — split, merge, or rename until you can.
+
+This rule doubles as the format for `Architecture.md` entries.
+
+### Place Before Create
+
+Before adding a new file or directory, answer: "Which existing boundary does this belong to?" If no boundary fits:
+1. The structure may need adjustment, or
+2. The new thing is poorly defined.
+
+Never create a file with the intent to "figure out where it goes later."
+
+### Dependency Direction
+
+Dependencies between layers/modules flow in one direction. If A depends on B and B depends on A, the boundary between them is broken — resolve it before moving forward.
+
+### Architecture.md
+
+Each project maintains an `Architecture.md` at root — a living map of the current structure, not a design document.
+
+Format:
+```markdown
+# Architecture
+
+## Structure
+<directory tree with one-sentence description per node>
+
+## Key Relationships (optional)
+<brief prose on core dependency/containment relationships, only when the tree alone is ambiguous>
+```
+
+Rules:
+- Update when structure changes (directory added/removed/moved, module split/merged). Not for implementation-detail changes.
+- Granularity: directory-level. Individual files only when a single file is a standalone module.
+- Keep it factual (what *is*), not aspirational (what *should be*).
+
+## 4. Communication
 
 - Evidence over assertion: back "works", "tested", "fixed" with the command, output, or file that proves it.
 - Be concise. No filler. Say what matters.
 - When reporting results, show the proof (command + output, test result, screenshot, etc.).
 
-## 4. Action
+## 5. Action
 
 - Don't assume your knowledge is current.
 - Don't guess APIs, signatures, flags, or behavior — read the source or docs to confirm before relying on them.
 - Batch independent operations in one pass, not one at a time.
 - Fan out independent subtasks to parallel subagents when you own the overall flow and the work is genuinely parallel.
 
-## 5. Git & Commits
+## 6. Git & Commits
 
 ### Commit Style
 
@@ -92,7 +132,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 - Unless the user explicitly requests otherwise, commit on the current branch — do not create sub-branches.
 - Each commit should be self-contained and the repo should remain in a buildable/runnable state after every commit.
 
-## 6. Documentation
+## 7. Documentation
 
 ### devlog.md (`docs/devlog.md`)
 
