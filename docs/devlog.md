@@ -2,6 +2,18 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
+## refactor(skills): prune vendor-specific skills and group collections into folders
+
+`422a5cc` + this commit | 2026-09-01
+
+- **Changes**: Removed 28 skill dirs (arkcli-* ×25, git-guardrails-claude-code, claude-handoff, logo-generator); moved plannotator-* (3) into `plannotator/` and the Matt Pocock collection (29) into `matt/`. `skills-link.sh` upgraded: group-dir support (scans `<group>/<skill>/SKILL.md`) plus stale-link pruning for farm links pointing into the two repos. `Architecture.md` updated to the new layout.
+- **Reason**: Repo is the shared cross-harness skill distribution channel (Mac pi + ArtrixClaw pi farms); harness/tool-specific skills were polluting it. Grouping keeps the plannotator and Matt Pocock sets intact (they cross-reference internally) while marking their boundaries.
+- **User feedback**: "ark，ggcc，claude-handoff删掉。plannotator、matt，用文件夹放起来来收纳整理（确认一下这不会影响这些skills的正常读取）。logogenerator删掉。"
+- **Process**: Verified the discovery surface is the flat `~/.agents/skills` farm (pi settings.json has no repo-path skill source; `~/.claude/skills` holds arkcli-managed copies outside this repo), so repo-side nesting cannot break reads: farm links stay flat one level. Rebuilt farm with `skills-link.sh --replace` and verified every link resolves to a frontmatter-valid SKILL.md.
+- **Result**: Public skills 73 → 45 (13 root + 29 matt/ + 3 plannotator/); farm 78 → 48 links, all resolving. Private repo (3 skills) untouched.
+- **Notes**: `~/.claude/skills` still holds arkcli-managed copies (its own connect channel, tracked by `.arkcli-managed-skills.json`) — separate distribution, cleanup pending owner decision. Remote ArtrixClaw farm to be rebuilt after it pulls this commit.
+
+
 ## docs: add architecture principles and Architecture.md
 
 `560652b` | 2026-07-18
