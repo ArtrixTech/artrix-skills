@@ -2,9 +2,20 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
+## docs(agents): unify goal-driven methodology and verification
+
+`this commit` | 2026-09-08
+
+- **Changes**: Reorganized AGENTS.md into problem/judgment, design/changes, execution/verification, and delivery/recalibration, followed by the existing Git and documentation policies. Integrated first principles, critical and independent judgment, adversarial review, ablation, Occam's razor, material uncertainty, and cohesion/coupling with concrete triggers and completion evidence. Replaced blanket stop-and-ask, line-count, abstraction, and architecture-failure rules with scoped decisions; retained surgical changes and operational policies.
+- **Reason**: Form one goal-driven methodology from the existing guidelines and the eight proposed principles, while keeping routine lookup and simple edits lightweight.
+- **User feedback**: "完成改写，然后用一个简单可视化来让我看中文版（不影响文档英文）的整个md、哪些是新的（它们插入到了哪里）。"
+- **Process**: Independent review of the English rules and a separate review of the full Chinese comparison. Confirmed unchanged Git/Documentation/Meta policies, English-only master text, coverage of every nonblank source line, and all 29 visible line references. Browser checks passed at 736/360px in light and dark themes and 320px in light, including expand/collapse and keyboard interaction; fixed a long inline filename overflow. No runtime code changed.
+- **Result**: English master updated to six sections; separate Chinese full-document visualization marks additions, rewrites, moves, and retained rules with original locations and current English line references.
+- **Notes**: Previous devlog block ends at `4b074d7`. The Chinese visualization is outside the repository and does not create a second maintained AGENTS.md.
+
 ## refactor(skills): prune vendor-specific skills and group collections into folders
 
-`422a5cc` + this commit | 2026-09-01
+`422a5cc` + `4b074d7` | 2026-09-01
 
 - **Changes**: Removed 28 skill dirs (arkcli-* ×25, git-guardrails-claude-code, claude-handoff, logo-generator); moved plannotator-* (3) into `plannotator/` and the Matt Pocock collection (29) into `matt/`. `skills-link.sh` upgraded: group-dir support (scans `<group>/<skill>/SKILL.md`) plus stale-link pruning for farm links pointing into the two repos. `Architecture.md` updated to the new layout.
 - **Reason**: Repo is the shared cross-harness skill distribution channel (Mac pi + ArtrixClaw pi farms); harness/tool-specific skills were polluting it. Grouping keeps the plannotator and Matt Pocock sets intact (they cross-reference internally) while marking their boundaries.

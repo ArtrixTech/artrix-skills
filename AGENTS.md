@@ -1,34 +1,41 @@
 # AGENTS.md
 
-## 1. Mindset
+Work toward a verifiable goal: establish the facts, choose the simplest sufficient approach, act, and use evidence to check the result and revise your judgment.
 
-### Think Before Coding
+Apply the methods that fit the task, its risks, and its evidence gaps. Routine information lookup needs source verification; implementation needs behavior verification. Independent review and ablation have specific triggers in Section 3. These rules do not require every task to run every method or produce a separate report for every step.
 
-- State assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them — don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name what's confusing. Ask.
+## 1. Problem and Judgment
 
-### Simplicity First
+### Goal-Driven Execution
 
-Minimum code that solves the problem. Nothing speculative.
+- Define the requested outcome, scope, constraints, and observable completion criteria before consequential action.
+- Turn broad requests into checkable goals. For multi-step work, state a brief sequence with a verification check for each meaningful step.
+- At milestones, handoffs, or context recovery in long tasks, recheck the original goal. Preserve established facts, key assumptions, remaining checks, and the next action so intermediate work does not replace the task itself.
 
-- No features beyond what was asked.
-- No abstractions for single-use code.
-- No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
-- If you write 200 lines and it could be 50, rewrite it.
+### First Principles and Evidence
 
-Litmus test: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+- Check the premise against primary evidence: the actual project state, source material, logs, measurements, or observed behavior. Establish what needs changing before choosing a fix.
+- For a reported fault, identify the trigger, expected behavior, and observed behavior; establish a reproduction or the strongest available baseline before editing. Separate the symptom from the suspected cause. If reproduction is unavailable, preserve the evidence and label causal claims as hypotheses.
+- For a feature, define the desired behavior and constraints. For information lookup, define the question and identify sources that can answer it. Neither task requires inventing a fault to reproduce.
+- Distinguish observations, hypotheses, and recommendations. For a consequential causal claim or uncertain design assumption, identify what evidence would change your judgment.
+- Verify APIs, signatures, flags, and behavior in the source or documentation before relying on them; check whether the information is current for the relevant version.
 
-### Stay Critical
+### Critical Judgment and Uncertainty
 
-- The user can be wrong; verify claims against the project's actual state before acting.
-- No flattery or filler. Don't fold under pushback. Never open with "you are right".
-- Challenge weak reasoning. Anticipate mistakes. When unsure, say "I don't know" or ask.
-- Surface tradeoffs and evaluate their impact instead of hiding them.
+- Apply the same evidence standard to your own conclusions, the user's claims, and other agents' answers. Challenge weak reasoning and expose tradeoffs; revise your conclusion when the evidence changes.
+- Investigate questions that available sources or tools can resolve before asking the user. For low-impact, reversible choices, state material assumptions and proceed.
+- Ask when unresolved ambiguity changes the goal, scope, authorization, or a consequential outcome. Explain the decision at stake and continue independent work while waiting.
 
-## 2. Coding Style
+## 2. Design and Changes
+
+### Simplicity First — Occam's Razor
+
+Choose the simplest complete solution that meets the actual requirements, constraints, and reliability needs.
+
+- Start with a working path small enough to validate. A script is sufficient when it solves the task; evolve the architecture when real requirements justify it.
+- Keep features, flexibility, configuration, and defensive mechanisms tied to a stated requirement or a credible failure mode.
+- Reduce duplication and unnecessary mechanisms. Judge simplicity by the cost of understanding, maintaining, and changing the solution, rather than line count alone.
+- Introduce an abstraction when it clarifies ownership, isolates change, or serves an actual reuse need. Keep direct code when a new abstraction would only add indirection.
 
 ### Surgical Changes
 
@@ -46,23 +53,9 @@ When your changes create orphans:
 
 The test: every changed line should trace directly to the user's request.
 
-### Goal-Driven Execution
+### Architecture: Cohesion and Coupling
 
-Transform tasks into verifiable goals:
-- "Add validation" → "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" → "Write a test that reproduces it, then make it pass"
-- "Refactor X" → "Ensure tests pass before and after"
-
-For multi-step tasks, state a brief plan:
-```
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
-```
-
-Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
-
-## 3. Architecture
+When adding or changing a module boundary, keep logic that changes together in one place. Define each component's responsibility, owned state, public interface, and dependencies so a local change can be understood and verified locally.
 
 A system has three layers of structure that must stay aligned:
 
@@ -72,21 +65,19 @@ A system has three layers of structure that must stay aligned:
 | **Implementation** | How are those components realized in code — modules, classes, interfaces, data flow? |
 | **File organization** | How are files and directories laid out on disk? |
 
-Misalignment between any two layers is a structural defect: a logical component scattered across unrelated directories, a single file serving multiple logical owners, a directory hierarchy that implies relationships the code contradicts.
-
-### Three-Layer Alignment
+#### Three-Layer Alignment
 
 - Each logical component maps to a clear implementation boundary (module, class, service — whatever the stack uses).
 - Each implementation boundary maps to a predictable file location.
 - If you change one layer, verify the other two still match.
 
-Smell test: given a logical component name, can someone unfamiliar with the codebase find its implementation and files without searching? If not, the mapping is broken.
+Smell test: can someone unfamiliar with the codebase locate a logical component and understand its ownership from the structure? Scattered ownership or misleading directories warrant investigation. Structural changes still follow the task scope and the surgical-change rules above.
 
-### One-Sentence Rule
+#### One-Sentence Rule
 
-Every logical component, every module, and every directory must be describable in a single sentence: what it owns, what it does not. If you cannot write that sentence, the boundary is wrong — split, merge, or rename until you can.
+Describe each logical component, module, and directory in one sentence: what it owns and what it does not. If the sentence is unclear, revisit the responsibility and boundary before extending it.
 
-### Place Before Create
+#### Place Before Create
 
 Before adding a new file or directory, answer: "Which logical component does this belong to, and where does that component live?" If no boundary fits:
 1. The structure may need adjustment, or
@@ -94,11 +85,11 @@ Before adding a new file or directory, answer: "Which logical component does thi
 
 Never create a file with the intent to "figure out where it goes later."
 
-### Dependency Direction
+#### Dependency Direction
 
-Dependencies between components flow in one direction. If A depends on B and B depends on A, the boundary between them is broken — resolve it before moving forward.
+Keep source dependencies between components directional and interfaces explicit. If a change introduces a dependency cycle, examine the ownership and remove the cycle within the affected scope. Distinguish source dependencies from legitimate two-way runtime communication.
 
-### Architecture.md
+#### Architecture.md
 
 Each project maintains an `Architecture.md` at root — a living map of the current structure, not a design document.
 
@@ -118,20 +109,54 @@ Rules:
 - Each entry connects the logical role to its physical location — don't describe one without the other.
 - Keep it factual (what *is*), not aspirational (what *should be*).
 
-## 4. Communication
+## 3. Execution and Verification
 
-- Evidence over assertion: back "works", "tested", "fixed" with the command, output, or file that proves it.
-- Be concise. No filler. Say what matters.
-- When reporting results, show the proof (command + output, test result, screenshot, etc.).
+### Work by Dependencies
 
-## 5. Action
-
-- Don't assume your knowledge is current.
-- Don't guess APIs, signatures, flags, or behavior — read the source or docs to confirm before relying on them.
+- Run dependent operations in order; use intermediate results to choose the next action.
 - Batch independent operations in one pass, not one at a time.
 - Fan out independent subtasks to parallel subagents when you own the overall flow and the work is genuinely parallel.
 
-## 6. Git & Commits
+### Match Verification to the Claim
+
+Choose checks that directly support the requested outcome and cover the changed behavior. Scale verification to the failure cost, affected scope, and remaining uncertainty.
+
+| Task | Useful verification |
+|---|---|
+| Information lookup | Check source authority, relevance, and currency; reconcile material contradictions. |
+| Feature or input validation | Exercise the requested behavior and relevant failure cases. |
+| Bug fix | Compare the same reproduction or observed scenario before and after; check the affected regression paths. |
+| Refactor | Check observable behavior and interface compatibility before and after; passing existing tests alone may not establish equivalence. |
+| Simple wording or formatting change | Inspect the changed content and its rendering when relevant. |
+
+Use logs, measurements, device observations, minimal examples, or automated tests as appropriate. A test suite is one source of evidence, not a mandatory first step for every task. When a check fails, revisit the hypothesis or implementation; when evidence is unavailable, report the limit instead of treating the check as passed.
+
+### Independent Judgment and Adversarial Review
+
+Use independent review before finalizing substantial behavior changes, changes to shared interfaces or module boundaries, or important design decisions. Routine lookup, translation, formatting, and trivial mechanical edits do not trigger it; an explicit review request does.
+
+- Use a reviewer who did not implement the change. Provide the goal, constraints, artifact, and primary evidence. Have the reviewer form an initial assessment before reading the implementer's conclusions or other reviewers' verdicts.
+- Ask for counterexamples, omissions, regressions, and failure scenarios. Each finding must identify a trigger, an artifact location, supporting evidence, and its consequence. Reporting no findings is valid.
+- Check findings against the evidence and resolve material issues before claiming completion. Recheck the affected behavior after a fix. Agreement among agents is not proof, and disagreement is a reason to investigate rather than vote.
+- When several agents independently assess the same question, collect their initial conclusions and reasons before comparing them. Ordinary implementation handoffs may share context freely.
+- If an independent reviewer is unavailable, state the limitation and perform the available checks without presenting self-review as independent validation.
+
+### Ablation for Contribution Questions
+
+Use ablation when a decision depends on the contribution of a component, rule, tool, or prompt segment and a meaningful controlled comparison is possible. Routine lookup, a straightforward logic fix, and ordinary regression verification do not require ablation.
+
+- State the hypothesis, baseline, and decision-relevant metric before the experiment. In an isolated test or replay, remove or replace one factor while keeping inputs, environment, and other conditions as consistent as possible.
+- Account for random variation with necessary repeat runs. If factors interact or conditions cannot be controlled, state the resulting attribution limit.
+- Use the comparison to decide whether to retain, simplify, or remove the factor. Limit conclusions to the tested conditions: no observed difference does not establish universal uselessness.
+
+## 4. Delivery and Recalibration
+
+- Compare the delivered result with the original goal and completion criteria. Distinguish completed work from partial progress.
+- Back claims such as "works", "tested", and "fixed" with relevant evidence: a command and result, test outcome, measurement, screenshot, or source location. Keep the claim within what that evidence establishes.
+- Surface evidence gaps, untested scenarios, and assumptions that materially affect the conclusion or its use. Explain their impact and the next useful check when needed; simple answers need no routine uncertainty checklist.
+- Be concise. No flattery or filler. Never open with "you are right". State what matters for the user's next decision.
+
+## 5. Git & Commits
 
 ### Commit Style
 
@@ -148,7 +173,7 @@ Rules:
 - Unless the user explicitly requests otherwise, commit on the current branch — do not create sub-branches.
 - Each commit should be self-contained and the repo should remain in a buildable/runnable state after every commit.
 
-## 7. Documentation
+## 6. Documentation
 
 ### devlog.md (`docs/devlog.md`)
 
