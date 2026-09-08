@@ -2,9 +2,20 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
-## docs(agents): distill methodology to core intents
+## docs(agents): establish V1.2 and versioning rules
 
 `this commit` | 2026-09-08
+
+- **Changes**: Set the AGENTS.md title to V1.2. Added master-copy versioning in Meta: minor for behavioral revisions, major/reset minor for incompatible policy changes, no bump for editorial-only edits. Synced the Chinese comparison.
+- **Reason**: Track methodology revisions without applying this version policy to downstream project code.
+- **User feedback**: "增加版本号逻辑，当前版本V1.2".
+- **Process**: Checked the scoped diff, current version, and Chinese source-line coverage.
+- **Result**: V1.2 established as the current document version.
+- **Notes**: Previous entry: `5bca937`.
+
+## docs(agents): distill methodology to core intents
+
+`5bca937` | 2026-09-08
 
 - **Changes**: Replaced procedural teaching, verification tables, and repeated caveats with concise principles and essential triggers. Kept one routine-lookup exemption and retained Git, Documentation, Meta, and Architecture.md policies. Updated the separate Chinese full-text comparison.
 - **Reason**: Let clear intent and familiar principles guide agents without prescribing routine execution details.

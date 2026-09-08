@@ -1,4 +1,4 @@
-# AGENTS.md
+# AGENTS.md — V1.2
 
 ## 1. Problem and Judgment
 
@@ -123,3 +123,5 @@ Naming rules:
 > This `AGENTS.md` is the canonical, continuously-iterated master copy. It is designed to be copied into other projects verbatim. **When copying to another project, remove this entire "Meta: Self-Reference Notice" section**, as the self-referential context only makes sense in this repo.
 >
 > In this repo, `AGENTS.md` itself is a managed asset — changes to it are tracked in `docs/devlog.md` like any other file.
+>
+> Versioning: `V<major>.<minor>`. Bump minor for behavioral revisions; bump major and reset minor for incompatible policy changes. Editorial-only changes keep the version. Log version changes in `docs/devlog.md`.
