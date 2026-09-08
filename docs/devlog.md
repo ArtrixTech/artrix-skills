@@ -2,9 +2,20 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
-## docs(agents): unify goal-driven methodology and verification
+## docs(agents): distill methodology to core intents
 
 `this commit` | 2026-09-08
+
+- **Changes**: Replaced procedural teaching, verification tables, and repeated caveats with concise principles and essential triggers. Kept one routine-lookup exemption and retained Git, Documentation, Meta, and Architecture.md policies. Updated the separate Chinese full-text comparison.
+- **Reason**: Let clear intent and familiar principles guide agents without prescribing routine execution details.
+- **User feedback**: "不是文字层面的浓缩，是意图明确层面的浓缩"; "原则本身就已经足够Agent理解".
+- **Process**: Independent intent and translation checks; restored the root-cause requirement identified by review. Verified complete Chinese coverage, policy preservation, and responsive expand/collapse and keyboard behavior.
+- **Result**: Methodology reduced from 1668 to 382 English words; full document from 231 to 125 lines.
+- **Notes**: Previous entry: `cfcc6a8`. Chinese display remains outside the repository.
+
+## docs(agents): unify goal-driven methodology and verification
+
+`cfcc6a8` | 2026-09-08
 
 - **Changes**: Reorganized AGENTS.md into problem/judgment, design/changes, execution/verification, and delivery/recalibration, followed by the existing Git and documentation policies. Integrated first principles, critical and independent judgment, adversarial review, ablation, Occam's razor, material uncertainty, and cohesion/coupling with concrete triggers and completion evidence. Replaced blanket stop-and-ask, line-count, abstraction, and architecture-failure rules with scoped decisions; retained surgical changes and operational policies.
 - **Reason**: Form one goal-driven methodology from the existing guidelines and the eight proposed principles, while keeping routine lookup and simple edits lightweight.
