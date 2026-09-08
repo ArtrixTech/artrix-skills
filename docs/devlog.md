@@ -2,9 +2,31 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
-## docs(agents): establish V1.2 and versioning rules
+## docs(devlog): record AGENTS synchronization changes
 
 `this commit` | 2026-09-08
+
+- **Changes**: Commit the deferred upstream-sync policy log and record the V1.2 commit hash.
+- **Reason**: Complete the history while preserving the AGENTS.md-only policy commit.
+- **User feedback**: "提交".
+- **Process**: Reviewed the remaining diff and checked whitespace.
+- **Result**: Development log caught up with the committed rules; publishing remains pending.
+- **Notes**: Previous entry: `a021ad1`.
+
+## docs(agents): add upstream sync and repository-specific rules
+
+`a021ad1` | 2026-09-08
+
+- **Changes**: Added first-turn GitHub checks, SHA-based comparison, confirmation for private edits, and dedicated single-file sync commits with a devlog exemption. Added Repo-Specific Rules and moved master-only guidance there. Updated the Chinese comparison; V1.2 unchanged.
+- **Reason**: Keep distributed copies current while preserving local overrides and unpublished master revisions.
+- **User feedback**: First-message update checks, private-change merge confirmation, default append to repo-specific rules, single-file commits; "不用更新版本号".
+- **Process**: Verified the public GitHub main/file URLs; independent review caught and resolved baseline refresh after approved merges. Checked shared-section preservation and full Chinese coverage.
+- **Result**: Sync policy and private-rule boundary added; publishing to GitHub remains pending.
+- **Notes**: Previous entry: `cf2b2f4`. This authoring change was committed as AGENTS.md only per user request; this log entry is included in the following log commit.
+
+## docs(agents): establish V1.2 and versioning rules
+
+`cf2b2f4` | 2026-09-08
 
 - **Changes**: Set the AGENTS.md title to V1.2. Added master-copy versioning in Meta: minor for behavioral revisions, major/reset minor for incompatible policy changes, no bump for editorial-only edits. Synced the Chinese comparison.
 - **Reason**: Track methodology revisions without applying this version policy to downstream project code.
