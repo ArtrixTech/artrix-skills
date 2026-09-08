@@ -1,5 +1,16 @@
 # AGENTS.md — V1.2
 
+## Conversation Start
+
+On the first user turn of a new conversation, check the [GitHub master](https://github.com/ArtrixTech/artrix-skills/blob/main/AGENTS.md) before other work. Detect updates by commit/content, even when the version label is unchanged.
+
+- For downstream copies, compare shared rules against the last adopted upstream commit, recorded as `<!-- agents-upstream: SHA -->` in **Repo-Specific Rules**. Recover a missing baseline from history; ask before overwriting differences if the baseline is unknown.
+- If only upstream changed, immediately replace the shared rules and preserve **Repo-Specific Rules**.
+- If shared rules have local edits, ask how to merge, even if Git can merge cleanly. Propose adopting upstream and appending the private changes as local overrides in **Repo-Specific Rules**; wait for the user's choice.
+- After any accepted update, record the adopted upstream SHA, reread this file, and immediately commit only `AGENTS.md` in a dedicated commit. Leave unrelated changes untouched; sync commits are exempt from devlog.
+
+If GitHub is unavailable, retain the local file and report the check as unavailable.
+
 ## 1. Problem and Judgment
 
 - **Goal-driven:** Define success and keep the original goal in view across long tasks and handoffs.
@@ -116,12 +127,13 @@ Naming rules:
 
 ---
 
-## Meta: Self-Reference Notice
+## 7. Repo-Specific Rules
 
-> **This section applies ONLY within this repository (`artrix-skills`).**
->
-> This `AGENTS.md` is the canonical, continuously-iterated master copy. It is designed to be copied into other projects verbatim. **When copying to another project, remove this entire "Meta: Self-Reference Notice" section**, as the self-referential context only makes sense in this repo.
->
-> In this repo, `AGENTS.md` itself is a managed asset — changes to it are tracked in `docs/devlog.md` like any other file.
->
-> Versioning: `V<major>.<minor>`. Bump minor for behavioral revisions; bump major and reset minor for incompatible policy changes. Editorial-only changes keep the version. Log version changes in `docs/devlog.md`.
+Local additions and overrides belong here and take precedence over shared defaults. Preserve this section when syncing; do not import the upstream repository's private rules.
+
+### artrix-skills only
+
+- This repository maintains the canonical master. Synchronize it through normal Git history, not downstream file replacement; preserve unpublished local revisions.
+- When copying this file to another repository, replace this section with that repository's rules and record the adopted upstream commit.
+- Changes to this master are tracked in `docs/devlog.md`.
+- Versioning: `V<major>.<minor>`. Bump minor for behavioral revisions; bump major and reset minor for incompatible policy changes. Editorial-only changes keep the version. Log version changes in `docs/devlog.md`.
