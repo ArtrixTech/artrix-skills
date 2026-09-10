@@ -1,4 +1,4 @@
-# AGENTS.md — V1.2
+# AGENTS.md — V1.3
 
 ## Conversation Start
 
@@ -55,6 +55,10 @@ Rules:
 - **Ablation:** Use controlled removal to evaluate a factor's contribution when that contribution matters to the decision.
 
 Routine lookup and trivial edits do not require adversarial review or ablation.
+
+### context-mode Tool Routing
+
+context-mode active. Hierarchy: ctx_batch_execute > ctx_execute > ctx_execute_file > ctx_search. Read/edit files → ctx_execute_file. Multi-command research → ctx_batch_execute. Web pages → ctx_fetch_and_index then ctx_search. Index docs → ctx_index. Stats → ctx_stats. Doctor → ctx_doctor. Upgrade → ctx_upgrade. Purge → ctx_purge.
 
 ## 4. Delivery and Recalibration
 
