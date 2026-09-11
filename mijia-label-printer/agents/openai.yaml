@@ -1,0 +1,4 @@
+interface:
+  display_name: "米家标签打印机"
+  short_description: "通过 BLE 查询米家 MJBQDYJ1-WC 状态并打印中文短标签"
+  default_prompt: "使用 $mijia-label-printer 找到附近的米家标签打印机并查询状态。"

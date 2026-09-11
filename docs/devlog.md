@@ -1,3 +1,13 @@
+## feat(skill): sync standalone Mijia BLE printer skill
+
+`pending` | 2026-09-11
+
+- **Changes**: Add mijia-label-printer runtime skill (SKILL.md, agents, scripts, references), register its Architecture location.
+- **Reason**: User requested GitHub publication of a standalone printer skill and synchronization into artrix-skills.
+- **Process**: Runtime mirrored from ArtrixTech/mijia-label-printer at e2e24ce; seven captured-frame/fake-transport tests and independent offline review pass, skill validator passes; byte equality checked before publication.
+- **Result**: Explicit scan/status/render/print commands, chosen device ID, short-label bounds, TLV status and buffer checks, unique evidence directories. Original “你好世界” print physically confirmed; packaged new idle monitoring remains simulated because device was no longer discoverable.
+- **Notes**: Canonical implementation: https://github.com/ArtrixTech/mijia-label-printer . Existing unrelated human-writing __pycache__ preserved.
+
 # Development Log
 
 <!-- Reverse-chronological. Latest block on top. -->
