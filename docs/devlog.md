@@ -1,6 +1,17 @@
-## feat(skill): add general meeting minutes workflow
+## fix(skill): default meeting minutes to prose and ask about cards
 
 `pending` | 2026-09-13
+
+- **Changes**: Make prose the explicit default for both summaries and owner actions; ask once about an optional card when the preference is unknown, with text-only as the default.
+- **Reason**: Match the user's writing preference and avoid inferring a card request from visual suitability.
+- **User feedback**: “非必要不用bulletpoint需要引入。需要主动询问是否需要卡片，默认不需要。”
+- **Process**: Checked unspecified, explicitly requested, declined and existing-card revision branches; ran the skill validator and whitespace check.
+- **Result**: Unanswered card questions leave text delivery unblocked; existing explicit choices persist; lists remain available where they materially aid comprehension.
+- **Notes**: Preserved unrelated cache directories and carried forward the prior commit hash under the devlog convention.
+
+## feat(skill): add general meeting minutes workflow
+
+`8fe9ff26ae8e55c12d4835e461e3765b147f5b44` | 2026-09-13
 
 - **Changes**: Add meeting-minutes with a concise evidence-to-minutes workflow, a conditional visual-card reference, implicit invocation policy, and Architecture registration.
 - **Reason**: Reuse the meeting-summary and detailed-card workflow across teams and subjects while leaving archive conventions to each repository.
