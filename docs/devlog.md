@@ -1,6 +1,17 @@
+## feat(skill): add general meeting minutes workflow
+
+`pending` | 2026-09-13
+
+- **Changes**: Add meeting-minutes with a concise evidence-to-minutes workflow, a conditional visual-card reference, implicit invocation policy, and Architecture registration.
+- **Reason**: Reuse the meeting-summary and detailed-card workflow across teams and subjects while leaving archive conventions to each repository.
+- **User feedback**: “总结当前的工作流然后收敛成一个skill”; “作为通用的会议纪要完成，不止适用于刘杨的会议”; “放在artrix-skills里面”.
+- **Process**: Skill validator passed. An independent community-reading-meeting exercise retained conflicting attendance, unaccepted ownership, undecided fees and source-command boundaries without invoking image or web tools. Installed and verified the new skill's local discovery symlink.
+- **Result**: Paragraph summaries, attributable actions, optional information-rich cards, semantic image checks and persistent delivery share one reusable entrypoint; no LY-specific people, topic or directory paths embedded.
+- **Notes**: Existing previous-commit hash update carried forward under the devlog convention; unrelated cache directories preserved. Local commits only.
+
 ## feat(skill): sync standalone Mijia BLE printer skill
 
-`pending` | 2026-09-11
+`5af15f5` | 2026-09-11
 
 - **Changes**: Add mijia-label-printer runtime skill (SKILL.md, agents, scripts, references), register its Architecture location.
 - **Reason**: User requested GitHub publication of a standalone printer skill and synchronization into artrix-skills.
