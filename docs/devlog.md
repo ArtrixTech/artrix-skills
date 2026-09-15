@@ -1,6 +1,17 @@
+## feat(travel-skills): vendor borski/travel-hacking-toolkit as grouped skill set
+
+`3506b95` | 2026-09-15
+
+- **Changes**: Vendored 48 travel skills plus shared `data/` and `scripts/` from borski/travel-hacking-toolkit @ 901675d into `travel-skills/`; added top-level README; registered the group in `Architecture.md`; rebuilt the farm so all 48 resolve through the repo.
+- **Reason**: `npx skills add` had dumped 48 loose copies into `~/.agents/skills` outside the two-repo source of truth, invisible to farm rebuilds and ArtrixClaw sync.
+- **User feedback**: 「帮我做成travel-skills文件夹，顶层写一个介绍」
+- **Process**: Confirmed group-dir convention from `matt/` and `plannotator/`; copied skills+data+scripts; wrote README; ran `skills-link.sh --replace`; verified 48/48 symlinks.
+- **Result**: 48 travel skills live in the public repo with data and update procedure documented; farm count 99 links.
+- **Notes**: Upstream sync steps are in `travel-skills/README.md`; `~/GitHub/travel-hacking-toolkit` clone kept for `git pull` diffs.
+
 ## fix(skill): default meeting minutes to prose and ask about cards
 
-`pending` | 2026-09-13
+`43406bfd0c8fa22baee027303d60f22d9bb7ec93` | 2026-09-13
 
 - **Changes**: Make prose the explicit default for both summaries and owner actions; ask once about an optional card when the preference is unknown, with text-only as the default.
 - **Reason**: Match the user's writing preference and avoid inferring a card request from visual suitability.
