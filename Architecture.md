@@ -12,3 +12,4 @@
 | Root Skills | Standalone, harness-agnostic skills | `agent-reach/`, `code-review/`, `find-skills/`, `human-writing/`, `impeccable/`, `kami/`, `meeting-minutes/`, `minimax-pdf/`, `mijia-label-printer/`, `paper-lookup/`, `research/`, `resolving-merge-conflicts/`, `seedance-25/`, `setup-pre-commit/`, `wizard/` |
 | Matt Pocock Collection | The vendor-coupled engineering-skills set (tracker workflow, grilling, deep modules, writing series) — grouped, mutually referencing | `matt/` |
 | Plannotator Wrappers | Skills bound to the plannotator CLI — annotation UI wrappers | `plannotator/` |
+| Travel Skills | Travel data skill set (48 skills: flight/hotel comparison orchestrators, cash/award data sources, points knowledge bases) vendored from borski/travel-hacking-toolkit, with shared `data/` and `scripts/` | `travel-skills/` |
