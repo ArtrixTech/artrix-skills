@@ -1,3 +1,14 @@
+## chore(impeccable): update canonical Codex skill to 4.3.1
+
+`pending` | 2026-09-19
+
+- **Changes**: Replace the untouched 3.9.1 vendor import with the official Codex 4.3.1 payload; include native iOS/Android guidance, new-work and craft references, specialist agent definitions, and the version-pinned engine launcher. Ignore downloaded platform binaries and register the runtime structure.
+- **Reason**: The global updater skipped the canonical `~/.agents/skills/impeccable` symlink, leaving Codex on the older source while copied provider installs updated.
+- **User feedback**: Approved updating Impeccable during the GolfDemo UI design task.
+- **Process**: Confirmed canonical guidelines match GitHub and the skill has no edits since import. Installed the official Codex payload into a temporary project with hooks disabled; mirrored only the skill directory; verified payload hashes, symlink resolution, skill version, and engine handshake.
+- **Result**: The existing skills-farm link now resolves to 4.3.1, with local darwin-arm64 engine 0.1.5. No GolfDemo files changed.
+- **Notes**: Preserve unrelated untracked Python cache directories. No provider hooks or global Codex configuration changes. Commit hash follows the next-commit devlog convention.
+
 ## feat(travel-skills): vendor borski/travel-hacking-toolkit as grouped skill set
 
 `3506b95` | 2026-09-15
