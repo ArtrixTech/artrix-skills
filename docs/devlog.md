@@ -56,6 +56,17 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
+## fix(skill): default to publishable meeting cards and prose
+
+`pending` | 2026-09-20
+
+- **Changes**: Make meeting cards the default deliverable; fold the visual-card guidance into the main skill, remove the standalone reference, set the default card ratio to 2:3, and require publishable outputs without internal transcript locations or tool traces.
+- **Reason**: Align the reusable workflow with the current meeting-delivery standard and the updated card expectations.
+- **User feedback**: “默认生成卡片”; “卡片风格需要直接移动到主skill文件里面来”; “输出的内容需要完全是对外可直接发布的状态”.
+- **Process**: Rewrote the skill, removed the obsolete reference, cleaned the current LY minutes of internal citations, and ran the skill validator plus symlink and content checks.
+- **Result**: The skill now produces a text summary and 2:3 alignment card by default, while allowing an explicit opt-out; the current golf minutes are publishable prose with business uncertainty preserved.
+- **Notes**: Preserve unrelated cache directories. Commit hash follows the documented next-commit convention.
+
 ## docs(devlog): record AGENTS synchronization changes
 
 `this commit` | 2026-09-08
