@@ -56,9 +56,20 @@
 
 <!-- Reverse-chronological. Latest block on top. -->
 
+## feat(skill): add Cursor conversation recall
+
+`pending` | 2026-09-27
+
+- **Changes**: Add `cursor-conversations` with a standard-library reader script (`list`, `search`, `find`, `read`, `stats`) and a SKILL.md documenting the on-disk layout, JSONL record format, index truncation limits, and read order; register it in `Architecture.md`.
+- **Reason**: Cursor keeps full agent transcripts locally, and reading them by hand loses the structure that makes a long conversation usable; the skill makes recall repeatable and keeps it behind an explicit request.
+- **User feedback**: “方法论写成skill放到~/GitHub/artrix-skills里面，只在用户显式要求读取cursor对话时使用。另外提供让agent完整读取对话的方式/指导。”
+- **Process**: Inspected 291 transcripts across 53 workspaces plus the FTS index, and confirmed three index limits by measurement: body capped at 10 KB per conversation against a 233 KB transcript, tool names and arguments absent from the body, and asynchronous re-indexing. Verified all five subcommands against a real conversation, including skeleton and tail rendering and both heredoc extractions quoted in SKILL.md.
+- **Result**: One command surface covers discovery through full reading; explicit-invocation policy set in both SKILL.md frontmatter and `agents/openai.yaml`.
+- **Notes**: Paths and format are Cursor internals without a stability guarantee; SKILL.md says to re-inspect a live transcript when shapes drift. Commit hash follows the next-commit devlog convention.
+
 ## fix(skill): default to publishable meeting cards and prose
 
-`pending` | 2026-09-20
+`f4959b2` | 2026-09-20
 
 - **Changes**: Make meeting cards the default deliverable; fold the visual-card guidance into the main skill, remove the standalone reference, set the default card ratio to 2:3, and require publishable outputs without internal transcript locations or tool traces.
 - **Reason**: Align the reusable workflow with the current meeting-delivery standard and the updated card expectations.

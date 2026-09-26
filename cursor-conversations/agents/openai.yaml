@@ -1,0 +1,6 @@
+interface:
+  display_name: "Cursor Conversations"
+  short_description: "Read and search local Cursor agent conversations"
+  default_prompt: "Use $cursor-conversations to read Cursor conversation d4553e6f-434c-45a3-8df4-aa46fd86bda7 and summarize what happened."
+policy:
+  allow_implicit_invocation: false
