@@ -58,7 +58,7 @@
 
 ## feat(skill): add Cursor conversation recall
 
-`pending` | 2026-09-27
+`57bb6a3` | 2026-09-27
 
 - **Changes**: Add `cursor-conversations` with a standard-library reader script (`list`, `search`, `find`, `read`, `stats`) and a SKILL.md documenting the on-disk layout, JSONL record format, index truncation limits, and read order; register it in `Architecture.md`.
 - **Reason**: Cursor keeps full agent transcripts locally, and reading them by hand loses the structure that makes a long conversation usable; the skill makes recall repeatable and keeps it behind an explicit request.
