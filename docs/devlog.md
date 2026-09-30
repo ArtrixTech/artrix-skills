@@ -164,3 +164,14 @@
 - **User feedback**: User requested a unified AGENTS.md synthesizing Karpathy's coding guidelines with personal project management habits (gitflow commits, devlog, precipitation docs).
 - **Process**: Merged Karpathy's 4 principles (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) with user's commit style, devlog format, precipitation doc convention, communication/behavior/action rules. Added self-reference meta section at bottom.
 - **Result**: Complete AGENTS.md ready for iteration; docs structure in place.
+
+## feat(travel): add travel entry skill, hide sub-skills from model
+
+`a2c60b2` | 2026-09-30
+
+- **Changes**: 新增 `travel/` 总入口 skill（48 项子技能索引，按 category 分组，描述 721 chars）；46 个 `travel-skills/*/SKILL.md` 加 `disable-model-invocation: true`（plan-trip、getting-started 原有）；Architecture.md 增补 Travel Entry 组件行。
+- **Reason**: 每个新会话系统提示词 skills section 46,129 chars，旅行包独占 17,375；隐藏子技能 + 常驻入口后投影降至 ~28.5k，子技能按需读取。
+- **User feedback**: 一期方案——做成总旅游入口 skill，有需要再读取列表，入口 skill 保持在上下文。
+- **Process**: 确认 farm（~/.agents/skills）被 pi 直接扫描（paseo 无 ~/.pi/agent/skills 软链仍进提示词，bundle 含 ".agents" 扫描证据）；dry-run 模拟 pi 过滤器：隐藏 52 + 新增 1 后 farm 可见集 31，加包内 25 = 56，与 107-52+1 吻合，零遗漏。
+- **Result**: travel 入口可见、46+2 个旅行子技能全部退出自动路由；paseo 6 个（仓外本地目录，本期一并处理）同加开关，备份 ~/.pi/agent/backups/paseo-skills-20260930-161034.tar.gz（不入本仓）。
+- **Notes**: 新增旅行子技能后需在 travel/SKILL.md 索引补行；子技能两条手动路径均可用：/skill:<name> 与直接 read ~/.agents/skills/<name>/SKILL.md。
