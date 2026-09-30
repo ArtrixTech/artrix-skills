@@ -1,5 +1,6 @@
 ---
 name: hotel-chains
+disable-model-invocation: true
 description: Maps hotel brand names (Westin, Sheraton, Holiday Inn, etc.) to chain families and loyalty programs. Use when hotel results contain branded properties or deciding whether to check award rates.
 category: reference
 summary: Maps brand names (Westin, Holiday Inn, etc.) to chain families and loyalty programs.

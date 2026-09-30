@@ -1,5 +1,6 @@
 ---
 name: southwest
+disable-model-invocation: true
 description: Search Southwest Airlines fares and points pricing via Patchright browser automation. SW is not in any GDS or API. Covers all fare classes, Companion Pass value, and fare drop monitoring.
 category: flights
 summary: SW fare classes, points pricing, Companion Pass. Change flight price drop monitor.

@@ -1,5 +1,6 @@
 ---
 name: scandinavia-transit
+disable-model-invocation: true
 description: Search trains, buses, and ferries in Norway (Entur), Sweden (ResRobot), and Denmark (Rejseplanen). Intra-Scandinavia ground transport with schedules and Danish fare pricing.
 category: destinations
 summary: Trains, buses, ferries in Norway, Sweden, and Denmark. Includes Danish fare/zone pricing.

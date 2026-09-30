@@ -1,5 +1,6 @@
 ---
 name: stopovers
+disable-model-invocation: true
 description: Per-program stopover rules for award redemptions. Which programs allow free stopovers, how many, how long, and which don't. Covers Icelandair, Aeroplan, Alaska, Flying Blue, Singapore, Cathay, JAL, and the negative space (BA, AA, Delta).
 category: reference
 summary: Per-program stopover rules for award redemptions. Includes Icelandair free stopover, Aeroplan, Alaska Atmos, Flying Blue, Singapore tiers, plus the negative space (BA, AA, Delta, JetBlue) that have no stopover programs.

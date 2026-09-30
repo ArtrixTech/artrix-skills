@@ -1,5 +1,6 @@
 ---
 name: google-flights
+disable-model-invocation: true
 description: Browser-automated Google Flights search via agent-browser. All airlines including Southwest. Cash prices, schedules, economy/business comparison, market selection.
 category: flights
 summary: Browser-automated Google Flights. All airlines including Southwest.

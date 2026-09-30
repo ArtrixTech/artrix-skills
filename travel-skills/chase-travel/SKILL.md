@@ -1,5 +1,6 @@
 ---
 name: chase-travel
+disable-model-invocation: true
 description: Search Chase UR travel portal via Patchright for cash prices, points pricing, Points Boost offers, and Chase Edit hotel benefits. Use for pay-with-points portal comparison on Sapphire Reserve/Preferred.
 category: portals
 summary: Chase UR portal for flights, hotels, Points Boost, Edit benefits. Requires Sapphire.

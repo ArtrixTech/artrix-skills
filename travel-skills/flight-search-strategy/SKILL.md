@@ -1,5 +1,6 @@
 ---
 name: flight-search-strategy
+disable-model-invocation: true
 description: Canonical multi-source flight search strategy. Source priority (Duffel, Ignav, Google Flights, Skiplagged, Kiwi, Seats.aero, Southwest), parallel workflow, market selection for international price arbitrage.
 category: reference
 summary: The canonical multi-source search workflow. Source priority (Duffel > Ignav > Google Flights > others), market selection for international routes, source accuracy hierarchy, common failure modes.

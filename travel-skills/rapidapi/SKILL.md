@@ -1,5 +1,6 @@
 ---
 name: rapidapi
+disable-model-invocation: true
 description: Google Flights Live and Booking.com Live search via RapidAPI. Secondary source for cash flight prices and hotel availability when SerpAPI needs a second opinion.
 category: hotels
 summary: Booking.com hotel prices.

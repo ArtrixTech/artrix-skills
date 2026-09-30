@@ -1,5 +1,6 @@
 ---
 name: bilt
+disable-model-invocation: true
 description: Search Bilt Rewards travel portal for cash and Bilt Points pricing on hotels and flights. Public REST API, no auth required. Includes Home Away From Home (HaFH) properties with $300+ benefits.
 category: portals
 summary: Bilt Rewards travel portal for hotels and flights. 1.25 cpp on Bilt Points. Home Away From Home properties give $300+ in benefits to Gold/Platinum members.

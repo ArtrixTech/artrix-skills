@@ -1,5 +1,6 @@
 ---
 name: round-the-world
+disable-model-invocation: true
 description: Round-the-world, Circle Pacific, and distance-based award products across alliances. Covers Star Alliance RTW, oneworld Explorer, Lufthansa M&M, Qantas, Cathay, JAL, Aeroplan, and Iberia charts.
 category: reference
 summary: RTW + Pacific Circle + Asia-Pacific Circle + regional distance-award reference. 13 active programs, 4 discontinued.

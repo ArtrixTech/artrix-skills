@@ -1,5 +1,6 @@
 ---
 name: wheretocredit
+disable-model-invocation: true
 description: Mileage earning rates by airline and booking class via wheretocredit.com. Redeemable and qualifying miles across 50+ programs. Use when deciding where to credit a flight or comparing earning rates.
 category: loyalty
 summary: Mileage earning rates by airline and booking class across 50+ programs.

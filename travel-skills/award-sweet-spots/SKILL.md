@@ -1,5 +1,6 @@
 ---
 name: award-sweet-spots
+disable-model-invocation: true
 description: Catalog of high-value award redemptions where points dramatically outvalue cash. Tiered by legendary/excellent/good with current rates, devaluation history, and booking caveats. Includes Oceania and South Pacific plays (Australia, New Zealand, Tahiti, Fiji) and transatlantic business-class sweet spots.
 category: reference
 summary: Catalog of legendary, excellent, and good award redemptions with current rates and devaluation history.

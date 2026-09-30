@@ -1,5 +1,6 @@
 ---
 name: amex-travel
+disable-model-invocation: true
 description: Search Amex travel portal for cash prices, MR points pricing, IAP discounts, and FHR/THC hotel benefits via Patchright. Use when comparing pay-with-points portal pricing to award alternatives.
 category: portals
 summary: Amex MR portal for flights, hotels, IAP discounts, FHR/THC benefits. Requires Platinum.

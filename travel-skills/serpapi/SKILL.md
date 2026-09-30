@@ -1,5 +1,6 @@
 ---
 name: serpapi
+disable-model-invocation: true
 description: Google Flights cash prices, Google Hotels, and Google Travel Explore via SerpAPI. Use for award-vs-cash comparison, hotel search, and destination discovery.
 category: hotels
 summary: Google Hotels search and destination discovery.

@@ -1,5 +1,6 @@
 ---
 name: fallback-and-resilience
+disable-model-invocation: true
 description: What to do when a tool fails, an API hits a rate limit, or a site blocks scraping. Maps every primary tool to its best fallback so a single failure doesn't block the search.
 category: reference
 summary: What to do when each tool fails. Tool-by-tool fallback paths.

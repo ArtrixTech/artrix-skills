@@ -1,5 +1,6 @@
 ---
 name: compare-hotels
+disable-model-invocation: true
 description: Unified hotel comparison across Chase Edit, Amex FHR/THC, metasearch, and Airbnb. Highlights premium program benefits, stacking opportunities, and benefit-adjusted pricing.
 category: orchestration
 summary: Unified hotel comparison across portals, metasearch, and Airbnb. FHR/Edit stacking detection.

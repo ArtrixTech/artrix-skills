@@ -15,3 +15,4 @@
 | Matt Pocock Collection | The vendor-coupled engineering-skills set (tracker workflow, grilling, deep modules, writing series) — grouped, mutually referencing | `matt/` |
 | Plannotator Wrappers | Skills bound to the plannotator CLI — annotation UI wrappers | `plannotator/` |
 | Travel Skills | Travel data skill set (48 skills: flight/hotel comparison orchestrators, cash/award data sources, points knowledge bases) vendored from borski/travel-hacking-toolkit, with shared `data/` and `scripts/` | `travel-skills/` |
+| Travel Entry | Master index skill — the single always-visible doorway to the 48 travel sub-skills, which carry `disable-model-invocation` and load on demand by reading their SKILL.md | `travel/SKILL.md` |

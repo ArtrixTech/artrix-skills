@@ -1,5 +1,6 @@
 ---
 name: transfer-bonuses
+disable-model-invocation: true
 description: Active credit card transfer bonuses from Amex, Chase, Capital One, Citi, Bilt, and Rove. Weekly-refreshed data with confidence markers. Use when pricing an award booking that involves a points transfer or deciding whether to wait for a better bonus.
 category: reference
 summary: Active credit card transfer bonuses with primary-source citations. Tells the agent the real effective ratio when transferring points during a promotion.

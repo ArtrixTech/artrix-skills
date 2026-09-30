@@ -1,5 +1,6 @@
 ---
 name: cabin-codes
+disable-model-invocation: true
 description: IATA cabin codes (F/J/W/Y) and saver fare class codes (X/I/O) for reading award inventory and determining partner-bookable availability.
 category: reference
 summary: IATA cabin codes (F/J/W/Y) and saver fare class codes (X/I/O) for partner-bookable inventory.

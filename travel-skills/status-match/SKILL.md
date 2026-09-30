@@ -1,5 +1,6 @@
 ---
 name: status-match
+disable-model-invocation: true
 description: Status match and status challenge rules for airlines and hotels. Covers free direct matches, paid concierge via statusmatch.com with fees, card-granted status, and critical lifetime/once-per-N-years restrictions that make wasted matches expensive.
 category: reference
 summary: Per-program status match rules with lifetime / once-per-N-years warnings, free vs paid concierge distinction, real fees, plus card-granted renewable status as the alternative.

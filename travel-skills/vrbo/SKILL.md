@@ -1,5 +1,6 @@
 ---
 name: vrbo
+disable-model-invocation: true
 description: Search VRBO (Vrbo / Expedia Group) vacation rentals including entire homes, condos, and cabins via Patchright browser automation. VRBO sits behind Akamai Bot Manager so plain HTTP and standard Playwright get a 429 bot wall. Use for whole-home or group stays, multi-bedroom rentals, and Airbnb-vs-VRBO comparisons. Trigger phrases include search VRBO, Vrbo rentals, vacation rental, cabin rental, whole house, condo for the group.
 category: hotels
 summary: VRBO whole-home, condo, and cabin search via Patchright. Complements Airbnb for group stays.

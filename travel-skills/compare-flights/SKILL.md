@@ -1,5 +1,6 @@
 ---
 name: compare-flights
+disable-model-invocation: true
 description: Unified flight comparison across cash (Duffel, Ignav), award (seats.aero), and portal (Chase, Amex) sources in parallel. Outputs one table with transfer partner optimization and recommendations.
 category: orchestration
 summary: Unified flight comparison across ALL sources in parallel. Auto-applies transfer optimization.

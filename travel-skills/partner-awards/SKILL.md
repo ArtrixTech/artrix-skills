@@ -1,5 +1,6 @@
 ---
 name: partner-awards
+disable-model-invocation: true
 description: Loyalty program airline ticketing partnerships (alliance + bilateral). Cross-references credit card currencies to booking programs for award reachability checks.
 category: reference
 summary: Which programs ticket which airlines (alliance + bilateral). Cross-references credit card currencies to booking programs. Reachability workflow.

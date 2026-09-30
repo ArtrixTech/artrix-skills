@@ -1,5 +1,6 @@
 ---
 name: tripadvisor
+disable-model-invocation: true
 description: TripAdvisor Content API for hotel ratings, restaurant search, attraction reviews, rankings, and nearby locations. Use when evaluating hotels or researching destinations. 5K calls/month.
 category: destinations
 summary: Hotel ratings, restaurant search, attraction reviews, nearby search. 5K calls/month.

@@ -1,5 +1,6 @@
 ---
 name: booking-guidance
+disable-model-invocation: true
 description: Step-by-step guidance for booking award flights. Covers the hold-before-transfer rule, phone numbers for major programs, and partner award booking workflows.
 category: reference
 summary: The booking flow, hold-before-transfer rule, phone numbers for major programs.

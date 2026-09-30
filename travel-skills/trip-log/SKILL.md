@@ -1,5 +1,6 @@
 ---
 name: trip-log
+disable-model-invocation: true
 category: orchestration
 summary: Opt-in trip journal. Save searches and booked trips to trips/logs/ for future reference.
 api_key: None

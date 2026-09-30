@@ -1,5 +1,6 @@
 ---
 name: trip-planner
+disable-model-invocation: true
 description: Full trip planning orchestration. Combines flight search, hotel search, and points optimization into one cost analysis. Use when the user says "plan a trip" or wants the complete picture for a destination.
 category: orchestration
 summary: Full trip planning. Flights + hotels + points in one shot.

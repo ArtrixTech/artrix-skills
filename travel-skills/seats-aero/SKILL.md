@@ -1,5 +1,6 @@
 ---
 name: seats-aero
+disable-model-invocation: true
 description: Search award flight availability across 27 mileage programs via Seats.aero Partner API. Find cheapest award flights, compare programs, and get booking links.
 category: flights
 summary: Award availability across 27 mileage programs.

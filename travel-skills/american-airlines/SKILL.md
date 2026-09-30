@@ -1,5 +1,6 @@
 ---
 name: american-airlines
+disable-model-invocation: true
 description: Check American Airlines AAdvantage balance, elite status, and loyalty points via Patchright. Handles email 2FA with 6-box code entry. Uses persistent browser profiles to skip 2FA on subsequent runs.
 category: loyalty
 summary: AAdvantage balance and elite status. AwardWallet does not support AA.

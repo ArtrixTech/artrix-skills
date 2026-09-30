@@ -1,5 +1,6 @@
 ---
 name: trip-calculator
+disable-model-invocation: true
 description: Cash vs points trip cost comparison. Factors in transfer ratios, taxes, fees, CPP valuations, and opportunity cost to recommend the best redemption strategy for flights and hotels.
 category: orchestration
 summary: Cash vs points decision answered with math. Transfer ratios, taxes, opportunity cost.

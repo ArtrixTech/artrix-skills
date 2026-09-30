@@ -1,5 +1,6 @@
 ---
 name: sutochno
+disable-model-invocation: true
 description: Search Sutochno.ru (СУТОЧНО.РУ), a Russian short-term apartment-rental platform where you book directly from owners and pay in rubles (Mir card / bank transfer). Best for Russian-speaking travellers booking stays in Georgia / the CIS, where Airbnb and Booking have withdrawn or do not accept Russian cards. Sutochno is NOT behind a bot wall — it ships on the toolkit standard patchright-docker base but runs the bundled chromium headless with no Akamai sensor to defeat. Trigger phrases include search Sutochno, суточно, Russian apartment rental, ruble payment, Mir card, Tbilisi apartment, Batumi apartment, Georgia CIS rental.
 category: hotels
 summary: Sutochno.ru Russian apartment search via Patchright. Ruble / Mir payment for Georgia / CIS stays.

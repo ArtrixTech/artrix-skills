@@ -1,5 +1,6 @@
 ---
 name: transfer-partners
+disable-model-invocation: true
 description: Credit card to loyalty program transfer ratios. Cross-references seats.aero award prices with transfer ratios to find the cheapest path from UR, MR, TYP, Capital One, or Bilt to any mileage program.
 category: loyalty
 summary: Cheapest transfer path from credit card points to mileage programs.

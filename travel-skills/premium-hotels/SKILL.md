@@ -1,5 +1,6 @@
 ---
 name: premium-hotels
+disable-model-invocation: true
 description: Search Amex FHR/THC and Chase Edit hotels by city. Compare credits, benefits, and find stacking opportunities across card programs.
 category: hotels
 summary: Search 4,659 Amex FHR/THC + Chase Edit hotels by city. Stacking opportunities.

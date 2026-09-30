@@ -1,5 +1,6 @@
 ---
 name: seatmaps
+disable-model-invocation: true
 description: Aircraft seat maps, cabin dimensions, and seat recommendations via SeatMaps.com and AeroLOPA. Search by flight number or airline+aircraft via agent-browser.
 category: flights
 summary: Aircraft seat maps, cabin dimensions, seat recommendations.

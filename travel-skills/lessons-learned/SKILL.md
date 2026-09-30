@@ -1,5 +1,6 @@
 ---
 name: lessons-learned
+disable-model-invocation: true
 description: Mandatory pre-flight-search reference. Contains the Seats.aero workflow (pull ALL programs first), source accuracy hierarchy, Southwest/Companion Pass specifics, small-market caveats, and Duffel limitations.
 category: reference
 summary: Hard-won knowledge from real searches. The mandatory Seats.aero workflow, Southwest specifics, Companion Pass math, source accuracy, small-market caveats, Duffel limitations. Load before any award flight search.

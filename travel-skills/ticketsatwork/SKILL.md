@@ -1,5 +1,6 @@
 ---
 name: ticketsatwork
+disable-model-invocation: true
 description: Search TicketsAtWork (EBG corporate perks) for hotels, theme park tickets, attractions, and rental cars via Patchright. Often beats portals by 10-30%. Use when comparing hotel or ticket prices for a trip.
 category: hotels
 summary: TicketsAtWork (EBG) corporate-perks portal. Hotels, theme park tickets, attractions, live events. Often beats portals by 10-30%.

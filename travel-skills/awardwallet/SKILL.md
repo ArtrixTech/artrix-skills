@@ -1,5 +1,6 @@
 ---
 name: awardwallet
+disable-model-invocation: true
 description: Query AwardWallet for loyalty program balances, elite status, and transaction history. Use when checking points inventory, airline status, or planning trips on points.
 category: loyalty
 summary: All loyalty balances, elite status, history.

@@ -1,5 +1,6 @@
 ---
 name: deutsche-bahn
+disable-model-invocation: true
 description: Deutsche Bahn train schedules, journey planning, and departures across Germany and into neighboring countries (Austria, Switzerland, Netherlands, France, Belgium). Use for ICE/IC/regional rail planning and airport ground transport (FRA, MUC).
 category: destinations
 summary: Deutsche Bahn (DB) train search across Germany and into AT/CH/NL/FR/BE via the open-source db-vendo-client. Stations, journeys, departure boards. No API key. Pairs with scandinavia-transit for Europe-wide rail coverage.

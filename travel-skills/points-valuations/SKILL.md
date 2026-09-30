@@ -1,5 +1,6 @@
 ---
 name: points-valuations
+disable-model-invocation: true
 description: Cents-per-point (cpp) valuations across major loyalty programs from four publications. Floor/ceiling rules for deciding if a redemption is good or exceptional.
 category: reference
 summary: CPP formula, floor/ceiling rules, surcharge-heavy programs to avoid, transfer bonus considerations, Chase Points Boost dynamics, opportunity cost.

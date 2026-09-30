@@ -1,5 +1,6 @@
 ---
 name: wikipedia-airports
+disable-model-invocation: true
 description: Discover destinations served from any airport via Wikipedia. Sanity-check whether an airline flies a specific route, find regional service that fare tools miss, identify late-split-return airport options.
 category: flights
 summary: Route discovery and airline-service sanity check via Wikipedia airport pages. Answers "does carrier X fly A→B" and "what airports serve destination Y" when fare tools disagree or miss obscure regional service. No API key.

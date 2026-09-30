@@ -1,5 +1,6 @@
 ---
 name: alliances
+disable-model-invocation: true
 description: Airline alliance membership (Star Alliance, oneworld, SkyTeam) and cross-alliance booking relationships. Maps which loyalty programs book which airlines, including bilateral partnerships outside alliances.
 category: reference
 summary: Star Alliance, oneworld, SkyTeam membership and recent shifts (SAS to SkyTeam, ITA to Star, Hawaiian/Fiji to oneworld). Key cross-alliance booking relationships.
