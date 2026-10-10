@@ -1,3 +1,14 @@
+## chore(skill): remove meeting-minutes
+
+`a340bca` | 2026-10-10
+
+- **Changes**: Deleted `meeting-minutes/` (SKILL.md plus agents/openai.yaml), dropped it from the Root Skills registration in `Architecture.md`, and removed the `~/.agents/skills/meeting-minutes` farm link.
+- **Reason**: The user decided to retire the local meeting-minutes skill.
+- **User feedback**: 「需要删掉本地的会议纪要skill，删除之前让我确认是哪个」 — scope confirmed as source directory plus symlink, with commit and push.
+- **Process**: Scanned `~/.agents/skills`, `~/.pi/agent/skills`, `~/.claude/skills`, `~/.codex/skills`, and both skills repos by name and by `会议纪要` body text, finding one canonical directory and one farm link. Used `git rm -r`, then removed the git-untracked empty `references/` directory. Carried the pre-existing `skills-link.sh` mode bit and `travel/SKILL.md` description edit through untouched.
+- **Result**: The repo and the farm hold no meeting-minutes entry; `git show` reports 50 deletions across three files. ArtrixClaw was 18 commits behind origin/main and its worktree never carried the skill, so the pull leaves it absent there as well.
+- **Notes**: Devlog hash follows the next-commit convention. The remote farm needed no pruning.
+
 ## chore(impeccable): update canonical Codex skill to 4.3.1
 
 `pending` | 2026-09-19
