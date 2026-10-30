@@ -1,3 +1,14 @@
+## docs(agents): silence routine upstream sync checks
+
+`pending` | 2026-10-10
+
+- **Changes**: Added a Conversation Start rule to run the upstream check silently and speak only when an update was applied, a user decision is needed, or the check failed; bumped AGENTS.md to V1.3.
+- **Reason**: Downstream agents opened every conversation by announcing that rules matched upstream, which is noise.
+- **User feedback**: 「下游的所有使用了这个文件的Agent，都在每一次对话的最开头提示规则与上游一致，无需同步……只在已经同步或者需要用户知道的时候才表述出来……但是原定的检查更新的工作依然需要做」
+- **Process**: Fetched origin; local AGENTS.md matched origin/main before the edit. Kept the check steps and the unavailable-GitHub report unchanged.
+- **Result**: The check still runs on the first turn; the "already current" outcome produces no message.
+- **Notes**: Behavioral revision, so minor bump. Downstream copies pick this up only after it is pushed to GitHub.
+
 ## chore(skill): remove meeting-minutes
 
 `a340bca` | 2026-10-10

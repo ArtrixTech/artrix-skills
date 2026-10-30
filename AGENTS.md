@@ -1,4 +1,4 @@
-# AGENTS.md — V1.2
+# AGENTS.md — V1.3
 
 ## Conversation Start
 
@@ -10,6 +10,8 @@ On the first user turn of a new conversation, check the [GitHub master](https://
 - After any accepted update, record the adopted upstream SHA, reread this file, and immediately commit only `AGENTS.md` in a dedicated commit. Leave unrelated changes untouched; sync commits are exempt from devlog.
 
 If GitHub is unavailable, retain the local file and report the check as unavailable.
+
+Run the check silently. Mention it only when you applied an update, need the user's decision, or could not complete the check; never report that the rules are already current.
 
 ## 1. Problem and Judgment
 
